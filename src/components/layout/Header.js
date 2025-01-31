@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <header>
-      <h1>Klipt-e</h1>
+      <Link to="/">
+        <h1>Klimpt-e</h1>
+      </Link>
     </header>
   );
 };
