@@ -27,7 +27,10 @@ const SignUp = ({ darkMode }) => {
     try {
       e.preventDefault();
 
-      await axios.post("http://localhost:5000/user", formData);
+      await axios.post(
+        `${process.env.REACT_APP_SERVER_URL}/user/signup`,
+        formData
+      );
 
       setFormData({
         username: "",
