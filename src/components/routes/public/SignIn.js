@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 
 const SignIn = () => {
   const [formData, setFormData] = useState({
-    email: "dougiehawes@hotmail.com",
-    password: "Wittgenstein42",
+    email: "",
+    password: "",
   });
 
   const { email, password } = formData;
