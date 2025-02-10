@@ -1,0 +1,29 @@
+@import "../../display/styles/variables";
+
+.header {
+  background-color: $colour3;
+  display: flex;
+  justify-content: space-between;
+  max-height: 60px;
+  min-height: 60px;
+  padding: $padding1;
+  .header-title-container {
+    .header-title-link {
+      display: flex;
+      .header-title-icon {
+        color: $colour1;
+      }
+      .header-title {
+        color: $colour1;
+      }
+    }
+  }
+  .header-buttons-container {
+    display: flex;
+    .header-darkmode-toggle-container {
+      .header-darkmode-toggle-icon {
+        color: $colour1;
+      }
+    }
+  }
+}

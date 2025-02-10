@@ -1,16 +1,8 @@
-@font-face {
-  font-family: "kumar-one";
-  src: url("../fonts/KumarOne.ttf");
-}
-@font-face {
-  font-family: "roboto-condensed";
-  src: url("../fonts/RobotoCondensed.ttf");
-}
-
-$font1: "kumar-one";
+@import "./variables";
 
 * {
   box-sizing: border-box;
+  font-family: $font2;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -24,4 +16,26 @@ h4,
 h5,
 h6 {
   font-family: $font1;
+}
+
+.app {
+  max-height: 100vh;
+  min-height: 100vh;
+  .body {
+    max-height: calc(100vh - 60px);
+    min-height: calc(100vh - 60px);
+    padding: $padding1;
+  }
+  .body-light-mode {
+    background-color: $colour1;
+    * {
+      color: $colour2;
+    }
+  }
+  .body-dark-mode {
+    background-color: $colour2;
+    * {
+      color: $colour1;
+    }
+  }
 }
