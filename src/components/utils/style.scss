@@ -1,0 +1,42 @@
+@import "../../display/styles/variables";
+
+// BUTTONS
+.button {
+  width: 100%;
+}
+.button1 {
+  bottom: 30px;
+  position: absolute;
+}
+.button1-light-mode {
+  background-color: $colour3;
+  color: $colour1 !important;
+}
+.button1-dark-mode {
+  background-color: $colour2;
+  border-width: 2px;
+}
+
+// INPUTS
+.input-container {
+  display: flex;
+  margin-bottom: 6px;
+  .input {
+    background-color: rgba($color: $colour1, $alpha: 0);
+    width: 100%;
+  }
+  .input1 {
+    border-bottom-width: 2px;
+  }
+  .input-password-toggle {
+    font-size: 28px;
+    margin-left: 6px;
+  }
+}
+
+.route1 {
+  .route-title {
+    font-size: 28px;
+    text-align: center;
+  }
+}

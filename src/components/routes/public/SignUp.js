@@ -3,12 +3,19 @@ import axios from "axios";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const SignUp = () => {
+import { Route1 } from "../../utils/routes";
+
+import { Button1 } from "../../utils/buttons";
+import { Input1 } from "../../utils/inputs";
+
+import "./style.scss";
+
+const SignUp = ({ darkMode }) => {
   const [formData, setFormData] = useState({
-    username: "DougieHawes",
-    email: "dougiehawes@hotmail.com",
-    password: "Wittgenstein42",
-    confirmPassword: "Wittgenstein42",
+    username: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
   });
 
   const { username, email, password, confirmPassword } = formData;
@@ -34,20 +41,52 @@ const SignUp = () => {
   };
 
   return (
-    <div>
-      <Link to="/">sign in</Link>
-      <form onSubmit={handleSubmit}>
-        <input name="username" onChange={handleChange} value={username} />
-        <input name="email" onChange={handleChange} value={email} />
-        <input name="password" onChange={handleChange} value={password} />
-        <input
-          name="confirmPassword"
-          onChange={handleChange}
-          value={confirmPassword}
-        />
-        <button type="submit">sign up</button>
-      </form>
-    </div>
+    <Route1
+      content={
+        <div className="auth-route">
+          <form className="form">
+            <Input1
+              name="username"
+              onChange={handleChange}
+              placeholder="enter username..."
+              value={username}
+            />
+            <Input1
+              name="email"
+              onChange={handleChange}
+              placeholder="enter email..."
+              value={email}
+            />
+            <Input1
+              name="password"
+              onChange={handleChange}
+              password={true}
+              placeholder="enter password..."
+              value={password}
+            />
+            <Input1
+              name="confirmPassword"
+              onChange={handleChange}
+              password={true}
+              placeholder="confirm password..."
+              value={confirmPassword}
+            />
+            <Button1
+              darkMode={darkMode}
+              onClick={handleSubmit}
+              text="sign in"
+            />
+            <p className="auth-route-link-container">
+              already registered? sign in
+              <Link className="auth-route-link" to="/signin">
+                here
+              </Link>
+            </p>
+          </form>
+        </div>
+      }
+      title="sign up"
+    />
   );
 };
 

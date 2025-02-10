@@ -3,7 +3,14 @@ import axios from "axios";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const SignIn = () => {
+import { Route1 } from "../../utils/routes";
+
+import { Button1 } from "../../utils/buttons";
+import { Input1 } from "../../utils/inputs";
+
+import "./style.scss";
+
+const SignIn = ({ darkmode }) => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -35,14 +42,39 @@ const SignIn = () => {
   };
 
   return (
-    <div>
-      <Link to="/signup">sign up</Link>
-      <form onSubmit={handleSubmit}>
-        <input name="email" onChange={handleChange} value={email} />
-        <input name="password" onChange={handleChange} value={password} />
-        <button type="submit">sign up</button>
-      </form>
-    </div>
+    <Route1
+      content={
+        <div className="auth-route">
+          <form className="form">
+            <Input1
+              name="email"
+              onChange={handleChange}
+              placeholder="enter email..."
+              value={email}
+            />
+            <Input1
+              name="password"
+              onChange={handleChange}
+              password={true}
+              placeholder="enter password..."
+              value={password}
+            />
+            <Button1
+              darkmode={darkmode}
+              onClick={handleSubmit}
+              text="sign in"
+            />
+            <p className="auth-route-link-container">
+              not yet registered? sign up
+              <Link className="auth-route-link" to="/signup">
+                here
+              </Link>
+            </p>
+          </form>
+        </div>
+      }
+      title="sign up"
+    />
   );
 };
 

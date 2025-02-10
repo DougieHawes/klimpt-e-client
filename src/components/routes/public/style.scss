@@ -1,0 +1,21 @@
+@import "../../../display/styles/variables";
+
+.auth-route {
+  .form {
+    margin: 0 auto;
+    max-width: 420px;
+    min-height: 240px;
+    position: relative;
+    width: 100%;
+    .auth-route-link-container {
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      .auth-route-link {
+        color: $colour3;
+        font-weight: 800;
+        margin-left: 6px;
+      }
+    }
+  }
+}
