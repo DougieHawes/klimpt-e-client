@@ -1,4 +1,6 @@
-import { useState } from "react";
+import axios from "axios";
+
+import { useState, useEffect } from "react";
 import {
   FaMoon,
   FaPalette,
@@ -13,6 +15,28 @@ import "./style.scss";
 const Header = ({ darkmode, onClick }) => {
   const [userSignedIn, setUserSignedIn] = useState(false);
 
+  const token = localStorage.getItem("token");
+
+  useEffect(() => {
+    const verifyToken = async () => {
+      try {
+        const res = await axios.post(
+          `${process.env.REACT_APP_SERVER_URL}/auth/validate`,
+          {},
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        );
+        setUserSignedIn(res.data.valid);
+      } catch (error) {
+        setUserSignedIn(false);
+      }
+    };
+
+    if (token) verifyToken();
+    else setUserSignedIn(false);
+  }, [token]);
+
   return (
     <header
       className={`header ${
@@ -21,7 +45,7 @@ const Header = ({ darkmode, onClick }) => {
     >
       <div className="header-title-container">
         <Link className="header-title-link" to="/">
-          <FaPalette className="header-title-icon" size={42} />
+          <FaPalette className="header-title-icon" />
           <h1 className="header-title">KlimptE</h1>
         </Link>
       </div>

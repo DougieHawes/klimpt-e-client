@@ -19,18 +19,18 @@ export const Input1 = ({
         name={name}
         onChange={onChange}
         placeholder={placeholder}
-        type={showPassword ? "password" : "text"}
+        type={password ? (showPassword ? "text" : "password") : "text"}
         value={value}
       />
       {password && (
         <>
           {showPassword ? (
-            <FaEye
+            <FaEyeSlash
               className="input-password-toggle"
               onClick={() => setShowPassword(false)}
             />
           ) : (
-            <FaEyeSlash
+            <FaEye
               className="input-password-toggle"
               onClick={() => setShowPassword(true)}
             />

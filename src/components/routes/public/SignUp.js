@@ -1,7 +1,7 @@
 import axios from "axios";
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { Route1 } from "../../utils/routes";
 
@@ -19,6 +19,8 @@ const SignUp = ({ darkMode }) => {
   });
 
   const { username, email, password, confirmPassword } = formData;
+
+  const navigate = useNavigate();
 
   const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -38,6 +40,8 @@ const SignUp = ({ darkMode }) => {
         password: "",
         confirmPassword: "",
       });
+
+      navigate("/signin");
     } catch (error) {
       console.log(error.message);
     }
@@ -77,7 +81,7 @@ const SignUp = ({ darkMode }) => {
             <Button1
               darkMode={darkMode}
               onClick={handleSubmit}
-              text="sign in"
+              text="sign up"
             />
             <p className="auth-route-link-container">
               already registered? sign in

@@ -34,9 +34,31 @@
   }
 }
 
+// LINKS
+.link {
+}
+.link1 {
+  border: 2px solid $colour3 !important;
+  margin: 0 auto;
+  padding: 6px;
+}
+.link1-dark-mode {
+  background-color: $colour2;
+  color: $colour3 !important;
+}
+.link1-light-mode {
+  background-color: $colour3;
+  color: $colour1 !important;
+}
+
+// ROUTES
+.route {
+  .route-title {
+    font-size: 35px;
+  }
+}
 .route1 {
   .route-title {
-    font-size: 28px;
     text-align: center;
   }
 }

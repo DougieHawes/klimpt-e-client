@@ -6,6 +6,8 @@ import Header from "./components/layout/Header";
 import SignIn from "./components/routes/public/SignIn";
 import SignUp from "./components/routes/public/SignUp";
 
+import Dashboard from "./components/routes/private/Dashboard";
+
 import "./display/styles/style.scss";
 
 const App = () => {
@@ -20,6 +22,10 @@ const App = () => {
         <Routes>
           <Route path="/signin" element={<SignIn darkmode={darkmode} />} />
           <Route path="/signup" element={<SignUp darkmode={darkmode} />} />
+          <Route
+            path="/dashboard"
+            element={<Dashboard darkmode={darkmode} />}
+          />
         </Routes>
       </div>
     </div>
